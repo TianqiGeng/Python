@@ -3,8 +3,13 @@ import time
 source=[r'C:\Python27\example\cat.py',r'C:\Python27\example\for.py']
 
 target_dir=r'C:\Python27\example\d'
+today=target_dir+os.sep+time.strftime('%Y%m%d')
+now=time.strftime('%H%M%S')
 
-target=target_dir+os.sep+time.strftime('%Y%m%d%H%M%S')+'.rar'
+if not os.path.exists(today):
+    os.mkdir(today)
+    print 'Successfully created directory',today
+target=today+os.sep+now+'.rar'
 print source
 print target
  
